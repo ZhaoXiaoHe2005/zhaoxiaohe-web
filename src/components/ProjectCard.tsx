@@ -4,6 +4,9 @@ import { Project } from '../types';
 import { Calendar, Users, Cpu, ChevronDown, ChevronUp, Tag } from 'lucide-react';
 import { cn } from '../lib/utils';
 
+// Import image as ES Module to guarantee correct compilation and packing by Vite
+import sakeLunaSecondaryImg from '../assets/images/regenerated_image_1783113546290.png';
+
 interface ProjectCardProps {
   project: Project;
   index?: number;
@@ -12,7 +15,7 @@ interface ProjectCardProps {
 }
 
 const SECONDARY_IMAGES: Record<string, string> = {
-  'sake-luna': '/src/assets/images/regenerated_image_1783113546290.png',
+  'sake-luna': sakeLunaSecondaryImg,
   'neon-shrine': 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=600&auto=format&fit=crop&q=80',
   'skincare-flora': 'https://images.unsplash.com/photo-1471193945509-9ad0617afabf?w=600&auto=format&fit=crop&q=80',
   'desert-oasis': 'https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=600&auto=format&fit=crop&q=80'

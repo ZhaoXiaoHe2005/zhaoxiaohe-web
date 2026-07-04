@@ -1,5 +1,12 @@
 import { Project, UniversityProject, Strength, Experience } from './types';
 
+// Import images as ES Modules to guarantee correct compilation and packing by Vite
+import profileAvatar from './assets/images/profile_avatar_new_1783111707767.jpg';
+import sakeLunaImg from './assets/images/regenerated_image_1783113546290.png';
+import neonShrineImg from './assets/images/cyber_shrine_1783105490449.jpg';
+import skincareFloraImg from './assets/images/skincare_branding_1783105476996.jpg';
+import desertOasisImg from './assets/images/sandstone_oasis_1783105501813.jpg';
+
 export const PROFILE = {
   name: '赵笑禾 / Zhao Xiaohe',
   titles: [
@@ -12,7 +19,7 @@ export const PROFILE = {
   location: '中国 · 上海 / Shanghai, China',
   wechat: 'Xiaohe_Design_3D',
   behance: 'behance.net/zhaoxiaohe_design',
-  avatar: '/src/assets/images/profile_avatar_new_1783111707767.jpg',
+  avatar: profileAvatar,
   stats: [
     { value: '5+', label: '行业深耕年限' },
     { value: '40+', label: '落地包装与品牌项目' },
@@ -27,7 +34,7 @@ export const PROJECTS: Project[] = [
     title: '赴山唤春，以武夷山「喊山祭茶」非遗民俗为文化根脉的年轻化茶包装',
     category: 'graphic',
     tags: ['茶包装设计', '非遗文化', '品牌视觉', '国潮新茶饮'],
-    image: '/src/assets/images/regenerated_image_1783113546290.png',
+    image: sakeLunaImg,
     description: '一款致敬武夷山「喊山祭茶」非遗民俗的年轻化茶叶包装设计。采用鲜活明朗的春绿色调，融合非遗文化根脉，打造符合现代年轻人审美的东方新茶饮视觉体系。',
     details: [
       '非遗根脉：以武夷山传统「喊山祭茶」非遗仪式为灵感，结合现代极简插画重构传统茶文化。',
@@ -43,7 +50,7 @@ export const PROJECTS: Project[] = [
     title: '「霓虹圣域」Neon Sanctum - 赛博神道教虚拟场景地编',
     category: 'level',
     tags: ['游戏地编', '关卡美术', '灯光与氛围', '硬表面细节'],
-    image: '/src/assets/images/cyber_shrine_1783105490449.jpg',
+    image: neonShrineImg,
     description: '一个融合日式传统神道教鸟居建筑与赛博朋克未来主义的全三维次世代游戏场景。重在通过灯光、雨夜积水反射与体积雾营造高对比度的叙事氛围。',
     details: [
       '美术规格：采用次世代PBR工作流，自制高度细分材质与模块化建筑资产',
@@ -59,7 +66,7 @@ export const PROJECTS: Project[] = [
     title: '「草木物语」Flora & Fauna - 有机草本护肤全案视觉体系',
     category: 'graphic',
     tags: ['品牌全案', '包装设计', '网格排版', '环保纸张'],
-    image: '/src/assets/images/skincare_branding_1783105476996.jpg',
+    image: skincareFloraImg,
     description: '针对天然植物成分护肤品的品牌重塑项目。建立从标志、辅助图形、纸盒网格排版到特种玻璃瓶标签的高质感轻奢视觉系统。',
     details: [
       '工艺：环保大豆油墨印刷、低饱和度专色、凹凸浮雕工艺',
@@ -75,7 +82,7 @@ export const PROJECTS: Project[] = [
     title: '「遗落绿洲」The Forgotten Oasis - 远古沙漠神庙遗迹关卡',
     category: 'level',
     tags: ['环境设计', '地形绘制', '植被散布', '自然叙事'],
-    image: '/src/assets/images/sandstone_oasis_1783105501813.jpg',
+    image: desertOasisImg,
     description: '广袤荒漠中掩埋的古文明神庙场景。展示巨型砂岩遗迹与地下涌出的晶莹水源、繁茂热带植被之间的强烈视觉张力。',
     details: [
       '地编要点：使用Runtime Virtual Texture (RVT) 完美融合砂岩资产与地形沙土，设计复杂的植被高度和湿度权重。',
