@@ -21,6 +21,18 @@ const SECONDARY_IMAGES: Record<string, string> = {
   'desert-oasis': 'https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=600&auto=format&fit=crop&q=80'
 };
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 120, rotateX: 12, skewY: 2, scale: 0.98 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    rotateX: 0,
+    skewY: 0,
+    scale: 1,
+    transition: { duration: 1.8, ease: [0.16, 1, 0.3, 1] }
+  }
+};
+
 export default function ProjectCard({ project, index = 0, onProjectClick }: ProjectCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -40,6 +52,7 @@ export default function ProjectCard({ project, index = 0, onProjectClick }: Proj
   return (
     <motion.div
       id={`project-row-${project.id}`}
+      variants={cardVariants}
       layout="position"
       className={cn(
         "group relative border-b border-white/5 py-10 lg:py-14 transition-all duration-500",
@@ -151,7 +164,10 @@ export default function ProjectCard({ project, index = 0, onProjectClick }: Proj
                 onClick={() => onProjectClick?.(project.id)}
                 className="aspect-16/10 rounded-none overflow-hidden border border-white/10 shadow-sm bg-zinc-900 relative group/mobimg cursor-pointer"
               >
-                <img
+                <motion.img
+                  initial={{ clipPath: 'polygon(0 0, 0 0, 0 100%, 0% 100%)', scale: 1.15 }}
+                  animate={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', scale: 1 }}
+                  transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
                   src={primaryImg}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover/mobimg:scale-105"
@@ -247,7 +263,10 @@ export default function ProjectCard({ project, index = 0, onProjectClick }: Proj
                     onClick={() => onProjectClick?.(project.id)}
                     className="aspect-16/10 rounded-none overflow-hidden border border-white/10 shadow-sm group/img relative bg-zinc-900 cursor-pointer"
                   >
-                    <img
+                    <motion.img
+                      initial={{ clipPath: 'polygon(0 0, 0 0, 0 100%, 0% 100%)', scale: 1.15 }}
+                      animate={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', scale: 1 }}
+                      transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
                       src={primaryImg}
                       alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-105"
